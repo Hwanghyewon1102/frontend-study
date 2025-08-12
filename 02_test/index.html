@@ -13,9 +13,99 @@
 
   <!-- 문서의 제목을 정의 -->
   <title>TEST</title>
+
+
+
+<!-- css, js 연결하기 -->
+  <!-- 외부 스타일 시트 -->
+   <link rel="stylesheet" href="./css/mian.css">
+
+   <!-- 내부 스타일 태그 -->
+    <style>
+      div{
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- 외부 스크립트 -->
+    <script src="js/main.js"></script>
+
+    <!-- 내부 스크립트 -->
+     <script>
+      console.log('내부 스크립트');
+      
+     </script>
+
+
+
+
 </head>
   <!-- 사용자 눈에 보이는 구조는 <body> 태그 안에 작성 -->
 <body>
-  
-</body>
+    <div>Hello world!</div>
+
+    <!-- 화면에 이미지 출력하기 -->
+     <!-- art(alternative의 약어)는 이미지가 추렭되지 못하는 경우 대신 출력할 텍스트
+     이미지 경로가 잘못됐거나 네트워크가 불안정하거나 등 이미지 대신 화면에 나올 글자
+     + 웹 접근성과 관련 (스크린 리더가 alt 텍스트를 읽어줌)
+     -->
+
+     <img src="/02_test/images/logo.png" alt="로고">
+     <img src="./images/logo.png" alt="로고">
+
+     <!-- 서버 장애가 발생하거나, 이미지 위치가 변경 또는 삭제되었다면
+      불러올 수 없음 -->
+     <img src="data:image/png;base64,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" alt="a사진">
+
+    <!-- css로 배경 이미지 넣기 -->
+
+    <div class="logo"></div>
+    
+    <br>
+
+    <!-- 페이지 나누고 연결하기(링크 걸기) -->
+     <a href="https://www.naver.com">Naver</a>
+     <a href="./about/about.html"> about</a>
+     <!-- (참고) index.thml로 만들면 경로에서 생략 가능
+      브라우저가 해당 이름을 가진 파일을 우선적으로 찾아
+      실행하기 때문 -->
+      <a href="./about">About</a>
+
+    </body>
 </html>
+
+
+<!-- 개발자 도구 사용하기 -->
+<!-- 
+  브라우저에서 제공하는 개발자 도구를 이용해서 웹 사이트를 분석하고 테스트 하는 방법
+  F12 또는 ctrl + shift + i
+  우클릭 -> 검사
+  요소 검사 모드: ctrl + shift + c
+
+  1) Elements 탭: HTML에 대한 정보를 확인
+
+  2) Styles 탭: 특정 HTML 요소에 어떤 스타일이 적용되었는지 CSS에 대한 정보를 확인
+    다른 스타일을 임시로 적용 가능(실제로 개발할 때 종종 쓰게 됨)
+
+  실습:
+  About 링크에 color: red 및 font-size, background 적용 실습!
+
+  여기서 임의로 적용한 스타일은 새로고침하면 다시 리셋됨
+  다른 사람이 만든 웹 사이트에서도 내가 원하는 스타일을 적용해 볼 수 있음
+
+  (추천) 수업 외 시간에 다양한 웹사이트를 찾아 개발자 도구로 HTML, CSS 분석해볼것! (실력향상에 도움)
+  실제로 다른 사이트의 HTML이나 특히 CSS를 따와서 쓰기도 함
+
+  3) Computed 탭: CSS 박스 모델과 함께 실제로 적용된 스타일 값만 모아서 볼 수 있음
+
+  4) Console 탭: JS를 다룰 때 주로 이용 
+
+  5) Sources: 파일 및 코드를 확인
+    페이지 내 파일 오픈
+    ctrl + o 또는 ctrl + p
+    ex) js라고 검색하면 해당 페이지의 js 파일을 확인할 수 있어 편리하다.
+
+  
+  <단축키 팁>
+  마지막으로 사용한 고정 위치로 다시 전환: Control + Shift + D
+-->
