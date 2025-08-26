@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 문제5
+    // 사용자로부터 세 개의 정수를 입력받아, 
+    // 그 수들의 최대값과 최소값, 합계와 평균을 구해서 브라우저에 출력하세요.
+
+
+    // 풀이5
+    // 주의! 덧셈을 하거나 문자끼리 비교를 피하려면 숫자로 변환해 줄 것!!
+    // '11' > '2' => false
+    // '11' > 2 => true
+
+    const num1 = Number(prompt('첫번째 정수 입력'));
+    const num2 = Number(prompt('두번째 정수 입력'));
+    const num3 = Number(prompt('세번째 정수 입력'));
+
+    let minnum = num1;
+    let maxnum = num1;
+    const total = num1 + num2 + num3;
+    const avg = total / 3;
+
+    if(maxnum < num2){
+      maxnum = num2;
+    }
+
+    if (maxnum < num3){
+        maxnum = num3
+    }
+
+    if(minnum > num2){
+      minnum = num2;
+    }
+
+    if (minnum > num3){
+        minnum = num3
+    }
+
+    document.write('최댓값' + maxnum + '<br>');
+    document.write('최솟값' + minnum + '<br>');
+    document.write('합계값' + total + '<br>');
+    document.write('평균값' + avg + '<br>');
+
+
+    
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
