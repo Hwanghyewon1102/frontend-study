@@ -63,7 +63,14 @@
       border: 1px solid #c5ccd2;
       padding: 27px 15px 8px;
       position: relative;
+      transition: 0.2s;
     }
+
+    .login-container .id-box.focused,
+    .login-container .pw-box.focused {
+      border: 2px solid #09aa5c;
+    }
+
     .login-container .id-box {
       border-radius: 8px 8px 0 0;
     }
@@ -101,12 +108,41 @@
       <div class="pw-box">
         <input type="password" id="pw" class="form-input">
         <label for="pw" class="text-label">비밀번호</label>
-        <span class="material-symbols-outlined icon-eye">visibility_off</span>
+        <span class="material-symbols-outlined icon-eye" onclick="eyeIcon()">visibility_off</span>
       </div>
 
       <button type="button" class="btn btn-login">로그인</button>
       <button type="button" class="btn btn-join">회원가입</button>
     </div>
   </div>
+
+  <script>
+    const inputEls = document.querySelectorAll('input.form-input');
+    const eyeIcon = document.querySelector('.icon-eye');
+
+
+    inputEls.forEach(function(inputEl){
+      console.log(inputEl);
+      const parentEl = inputEl.parentElement; // 부모 요소를 반환
+      console.log(parentEl);
+
+      // focus: 포커스가 주어졌을 때 발생
+      inputEl.addEventListener('focus', function(){
+        parentEl.classList.add('focused');
+      })
+      
+      // blur: 포커스를 잃을 때 발생
+      inputEl.addEventListener('blur', function(){
+        parentEl.classList.remove('focused');
+      })
+    });
+
+
+    function eyeIcon(params) {
+      eyeIcon.classList.add('chacked');
+    }
+    
+   
+  </script>
 </body>
 </html>
