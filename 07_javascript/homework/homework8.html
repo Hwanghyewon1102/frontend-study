@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button type="button" class="btn1">테이블 생성</button>
+  <script>
+    const btn1 = document.querySelector('.btn1');
+    console.log(btn1);
+    let num = 1;
+    
+    btn1.addEventListener('click', function(){
+      const i = prompt('테이블 행의 개수는?');
+      console.log(i);
+      const j = prompt('테이블 열의 개수는?');
+      console.log(j);
+
+      document.write('<table border = 1>');
+      for(let a = 0; a < i; a++){
+        document.write('<tr>');
+        for(let b = 0; b < j; b++){
+          document.write('<td>' + num++ + '</td>')
+        }
+        document.write('</tr>');
+      }
+      document.write('</table>');
+
+    })  
+  </script>
+
+  <h1>귤농장</h1>
+  <button type="button" class="btn2">체험시작</button>
+  <img src="images/gyul.png" alt="" class="image2">
+  <script>
+    const btn2 = document.querySelector('.btn2');
+    const image2 = document.querySelector('.image2');
+    let mag = ' ';
+
+    btn2.addEventListener('click', function(){
+      const gul = Number(prompt('담아갈 귤 개수'));
+
+      
+
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>
+  <button type="button" class="btn">+</button>
+  </p>
+  <img src="images/sponge.png" alt="자라나라 스폰지밥" class="sponge" width="50">
+  
+  <script>
+    const sponge = document.querySelector('.sponge');
+    const imagesize = document.querySelector('.btn');
+
+    imagesize.addEventListener('click', function () {
+      // 주의! 이미지는 가로 사이즈만 바꾸면 자동으로 세로 사이즈도 바뀜
+      // sponge.height += 100;
+      // sponge.width += 100;
+
+      // 변수에 저장해두고 저장된 값을 사용
+      const imgWidht = sponge.width;
+      const imgHeight = sponge.height;
+
+      // 방법1 : HTML 속성(attribute) -> DOM 속성(property)
+      // sponge.width = imgWidht + 100;
+      // sponge.height = imgHeight + 100;
+
+      sponge.style.width = `${imgWidht + 100}px`;
+      sponge.style.height = `${imgHeight + 100}px`;
+
+    })
+  </script>
+
+
+
+
+</body>
+</html>

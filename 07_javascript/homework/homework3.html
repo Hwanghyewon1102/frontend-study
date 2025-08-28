@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .g{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: aquamarine;
+      margin: 10px;
+      
+    }
+    .p {
+    display: flex;        /* 가로 정렬 */
+    flex-wrap: wrap;      /* 넘치면 줄바꿈 */
+  }
+  </style>
+</head>
+<body class="bo">
+  <h1>홀수 짝수?</h1>
+
+    <span class="p"></span>
+
+  
+  <button type="button" class="plus">구슬추가</button>
+  <button type="button" class="check">홀짝</button>
+  <button type="reset" class="re">초기화</button>
+
+  <script>
+    const plus = document.querySelector('.plus');
+    const check = document.querySelector('.check');
+    const remove = document.querySelector('.re')
+    const p = document.querySelector('.p');
+
+
+    plus.addEventListener('click', function(){
+      p.innerHTML += '<div class="g"></div>';
+    });
+
+    check.addEventListener('click', function(){
+      const ch = document.querySelectorAll('.g');
+      const all = ch.length;
+
+      if(all % 2 === 0){
+        alert('짝수');
+      }else {
+        alert('홀수');
+      }
+    })
+    
+    remove.addEventListener('click', function(){
+      p.innerHTML = '';
+    });
+    
+  </script>
+</body>
+</html>

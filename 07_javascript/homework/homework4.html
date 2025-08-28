@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>문자 누적하기</h1>
+  <p>
+    <input type="text" class="te"><button type="button">누적</button>
+  </p>
+  <textarea name="textarea" id="answkd" style="width: 300px; height: 100px;"></textarea>
+
+  <script>
+    const textinput = document.querySelector('.te');
+    const buttoninput = document.querySelector('button');
+    const retext = document.querySelector('textarea');
+    console.log(textinput);
+    console.log(buttoninput);
+    console.log(retext);
+
+    buttoninput.addEventListener('click', function(){
+      //  const inputText = textinput.value;
+       retext.value += textinput.value;
+
+       textinput.value = '';
+    });
+    
+  </script>
+</body>
+</html>

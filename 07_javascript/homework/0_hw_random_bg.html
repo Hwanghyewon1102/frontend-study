@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body class="bo">
+  <h1>랜덤 배경색</h1>
+  <button type="button" onclick="changeBgColor()">바꿔</button>
+
+  <script>
+    function changeBgColor(){
+        const Body = document.querySelector('.bo');
+        const red = Math.floor(Math.random() * 255);
+        const green = Math.floor(Math.random() * 255);
+        const blue = Math.floor(Math.random() * 255);
+        Body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})` ;
+    }
+  </script>
+</body>
+</html>

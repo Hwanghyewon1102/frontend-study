@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <p> 가로:
+  <input type="number" class="wh">
+  </p>
+  <p>
+  세로:
+  <input type="number" class="he"> <button type="button">변경</button>
+  </p>
+  <img src="images/dung.png" alt="뚱이" style="width: 100px; height: 100px;" class="dong">
+  <script>
+    const wh = document.querySelector('.wh');
+    const he = document.querySelector('.he');
+    const btn = document.querySelector('button');
+    const dong = document.querySelector('.dong');
+
+
+    btn.addEventListener('click', function(){
+      // img.style.width = wh.value + 'px';
+      // img.style.height = he.value + 'px';
+
+      dong.width = wh.value;
+      dong.height = he.value;
+
+    })
+  </script>
+    
+</body>
+</html>
