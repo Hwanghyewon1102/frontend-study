@@ -7,45 +7,88 @@
 </head>
 <body>
 
-  <button type="button" class="btn1">테이블 생성</button>
+  <h1>콤보세트</h1>
+  <label for="setCnt">개수: </label>
+  <input type="number" id = "setCnt">
+  <button type="button" class="btn-order">주문</button>
+  <div class="combo-list">
+    <!-- 콤보 세트 이미지가 들어갈 자리 -->
+    
+  </div>
+
   <script>
+    const countInput = document.querySelector('#setCnt');
+    const comboList = document.querySelector('.combo-list');
+    const order = document.querySelector('.btn-order');
+
+    order.addEventListener('click', function(){
+      let imgHtml = ' ';
+      for(let i = 0; i < countInput.value; i++){
+        imgHtml += '<div>';
+        imgHtml += '<img src="images/popcorn.png">';
+          for (let j  = 0; j < 2; j++) {
+            imgHtml += '<img src="images/coke.png">';
+            
+          }
+          imgHtml += '</div>'
+      }
+       comboList.innerHTML = imgHtml; 
+    });
+
+  </script>
+  <h1>행 열 개수 받아 테이블 생성</h1>
+  <button type="button" class="btn1">테이블 생성</button>
+  <div class="table-area">
+   
+  </div>
+  <script>
+    const tableArea = document.querySelector('.table-area');
     const btn1 = document.querySelector('.btn1');
     console.log(btn1);
     let num = 1;
     
     btn1.addEventListener('click', function(){
-      const i = prompt('테이블 행의 개수는?');
-      console.log(i);
-      const j = prompt('테이블 열의 개수는?');
-      console.log(j);
+      const row = prompt('테이블 행의 개수는?');
+      const column = prompt('테이블 열의 개수는?');
 
-      document.write('<table border = 1>');
-      for(let a = 0; a < i; a++){
-        document.write('<tr>');
-        for(let b = 0; b < j; b++){
-          document.write('<td>' + num++ + '</td>')
+      let num = 1;
+      let html = '<table border="1">';
+      for (let i = 0; i < row; i++) {
+        html += '<tr>';
+        for (let j = 0; j < column; j++) {
+          html += `<td>${num++}</td>`;
         }
-        document.write('</tr>');
+        html += '</tr>';
       }
-      document.write('</table>');
-
+      html += '</table>';
+      tableArea.innerHTML = html;
     })  
   </script>
 
   <h1>귤농장</h1>
-  <button type="button" class="btn2">체험시작</button>
-  <img src="images/gyul.png" alt="" class="image2">
+  <button type="button" onclick="getOrange()">체험시작</button>
+  <div class="basket" style="display: flex; flex-wrap: wrap;">
+   
+  </div>
+
   <script>
-    const btn2 = document.querySelector('.btn2');
-    const image2 = document.querySelector('.image2');
-    let mag = ' ';
+    const basketDiv = document.querySelector('.basket');
 
-    btn2.addEventListener('click', function(){
-      const gul = Number(prompt('담아갈 귤 개수'));
+    function getOrange() {
+      const gram = prompt('몇 그램?');
+      let orangeWeight = 0;
+      let html = '';
 
-      
+      while (gram - orangeWeight >= 10) {
+        orangeWeight += 10;
 
-    })
+        html += '<div>';
+        html += `  <p>귤 ${orangeWeight}g</p>`;
+        html += '  <img src="images/gyul.png" alt="귤">'
+        html += '</div>';
+      }
+      basketDiv.innerHTML = html;
+    }
   </script>
 </body>
 </html>
