@@ -27,15 +27,15 @@
     
     function radiusAdd(round) {
       image.style.borderRadius = round + 'px';
-      radiusNum.textContent = round;
+      radiusNum.textContent = round + 'px';
     }
 
 
-    radiusAdd(range.value + 'px');
+    radiusAdd(range.value);
 
     
     range.addEventListener('input', function () {
-      radiusAdd(this.value + 'px');
+      radiusAdd(this.value);
     });
   </script>
 </body>
