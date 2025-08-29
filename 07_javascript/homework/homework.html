@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    img{
+    img {
       width: 150px; 
       height: 150px;
       border: 4px dotted green;
@@ -14,17 +14,29 @@
   </style>
 </head>
 <body>
-  <img src="images/human.png" alt="a">
-  <label for="size">
-  <input type="range" id="sizevalue" min="0" max="75" step="5"></label>
+  <img src="images/human.png" alt="징징이" id="image">
 
-
+  <input type="range" id="sizevalue" min="0" max="75" step="5" value="40">
+  <span id="radiusNum"></span>
 
   <script>
-    const size = document.querySelector('.size');
-    const sizevalue = document.querySelector('.sizevalue');
+    const image = document.getElementById('image');
+    const range = document.getElementById('sizevalue');
+    const radiusNum = document.getElementById('radiusNum');
 
     
+    function radiusAdd(round) {
+      image.style.borderRadius = round + 'px';
+      radiusNum.textContent = round;
+    }
+
+
+    radiusAdd(range.value + 'px');
+
+    
+    range.addEventListener('input', function () {
+      radiusAdd(this.value);
+    });
   </script>
 </body>
 </html>
