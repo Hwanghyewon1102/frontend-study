@@ -15,7 +15,48 @@
     // 그리고 생성한 날짜 객체 정보를 예쁘게 출력하세요.
 
     // 풀이1
+    const newdate = new Date(2023, 1, 20, 3, 12);
+    const newYear = newdate.getFullYear();
+    const newMonth = newdate.getMonth();
+    const newDay = newdate.getDate();
+    const newHours = newdate.getHours();
+    const newDateYear = newdate.getMinutes();
     
+
+    // const a = newHours < 12 ? '오전' : '오후';
+
+    // let a = newHours;
+    // if(a < 12){
+    //   a = '오전'
+    // }else{
+    //   a = '오후'
+    // }
+
+    // document.write(`${newYear}년 ${newMonth+1}월 ${newDay}일, ${a} ${newHours}시 ${newDateYear}분`)
+
+    // (ES2017) padStart(문자열의 총 길이, 추가할 문자): 문자열 안에 지정된 문자를 지정된 길이만큼 추가
+    // const month1 = String(newdate.getMonth() + 1).padStart(2, '0');
+
+    let b = newHours;
+    if(b < 12){
+      b = `0${newHours}`
+    }else{
+      b = newHours;
+    }
+
+    let c = newDateYear;
+    if(c < 10){
+      c = `0${newDateYear}`
+    }else{
+      c = newDateYear;
+    }
+
+    document.write(`${newYear}-${newMonth+1}-${newDay} ${b}:${c}<br>`)
+
+    // (참고)지역(locale) 별로 변환해주는 메소드
+    document.write(newdate.toLocaleString('ko-KR'), '<br>'); // 날짜 + 시간
+    document.write(newdate.toLocaleString('en-CA'), '<br>'); // 날짜 + 시간
+
   </script>
 </body>
 </html>

@@ -17,13 +17,40 @@
     // 2) 배열을 이용한 방법
 
     // 예시:
-    // const date = new Date(2023, 0, 5); // 2023년 1월 5일
+    const date = new Date(2023, 0, 5); // 2023년 1월 5일
     // "THU"가 출력되어야 합니다.
-
+    document.write(date + '<br>');
     // 풀이2-1
-    
-    
+    const day = date.getDay();
+    document.write(day + '<br>')
+
+    let dday = day;
+    if(dday === 0){dday = 'SUN'}
+    else if(dday === 1){dday = 'MON'}
+    else if(dday === 2){dday = 'TUE'}
+    else if(dday === 3){dday = 'WED'}
+    else if(dday === 4){dday = 'THU'}
+    else if(dday === 5){dday = 'FRI'}
+    else if(dday === 6){dday = 'SAT'}
+    document.write(dday + '<br>');
+
+
+
+    let dddday = day;
+    switch(dddday){
+      case 0: dddday = 'SUN'; break;
+      case 1:  dddday = 'MON';  break;
+      case 2:  dddday = 'TUE';  break;
+      case 3:  dddday = 'WED';  break;
+      case 4:  dddday = 'THU';  break;
+      case 5:  dddday = 'FRI';  break;
+      case 6:  dddday = 'SAT';  break;
+    }
+    document.write(dddday + '<br>');
+
     // 풀이2-2
+    const ddday = ['SUN', 'MON', 'TUE','WED', 'THU', 'FRI', 'SAT']
+    document.write(ddday[day]);
     
   </script>
 </body>
